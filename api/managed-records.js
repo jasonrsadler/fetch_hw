@@ -31,7 +31,7 @@ function retrieve(...args) {
             uriObj.removeSearch('offset');
             uriObj.addSearch({'offset': offset + 10});
             fetch(URI(uriObj)).then(r => r.json())
-            .then(next => {             
+            .then(peek => {             
                 var payload = { 
                     ids: res.map(idMap => { return idMap.id }),
                     open: 
@@ -53,7 +53,7 @@ function retrieve(...args) {
                     })
                     .length,
                     previousPage: page == 1 || page == NaN ? null : page-1,                
-                    nextPage: next.length > 0 ? page+1 : null 
+                    nextPage: peek.length > 0 ? page+1 : null 
                     
                     
                 };
