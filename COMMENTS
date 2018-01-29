@@ -1,0 +1,4 @@
+run the same as instructions
+
+yarn install
+yarn test
